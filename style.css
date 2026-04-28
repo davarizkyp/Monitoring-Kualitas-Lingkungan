@@ -1,0 +1,155 @@
+/* --- CSS: MENDESAIN TAMPILAN (STYLING) --- */
+:root {
+    --bg-color: #0b0f19;
+    --panel-bg: #151b29;
+    --text-main: #e2e8f0;
+    --accent-blue: #00f0ff;
+    --accent-green: #00ff66;
+    --accent-red: #ff3333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header { margin-top: 40px; text-align: center; }
+
+.header h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--accent-blue);
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    margin-bottom: 5px;
+}
+
+.status-koneksi { font-size: 16px; color: #888; }
+
+.dashboard {
+    display: flex; gap: 40px; margin-top: 50px;
+    flex-wrap: wrap; justify-content: center;
+}
+
+/* Desain Kotak Panel */
+.panel {
+    background-color: var(--panel-bg);
+    border: 1px solid #2a344a;
+    border-radius: 20px;
+    padding: 40px; width: 250px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.panel:hover { transform: translateY(-5px); }
+
+.panel-title {
+    font-size: 22px; color: #8fa1b3;
+    letter-spacing: 2px; margin-bottom: 20px;
+}
+
+.panel-icon { font-size: 40px; margin-bottom: 15px; }
+
+.value-display {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 55px; font-weight: bold; margin: 10px 0;
+}
+
+/* Warna Status Spesifik */
+.status-normal {
+    color: var(--accent-green);
+    text-shadow: 0 0 20px rgba(0, 255, 102, 0.4);
+    border-bottom: 3px solid var(--accent-green);
+}
+
+.status-warning {
+    color: var(--accent-red);
+    text-shadow: 0 0 20px rgba(255, 51, 51, 0.6);
+    border-bottom: 3px solid var(--accent-red);
+    animation: kedip 1.5s infinite;
+}
+
+.status-lembab {
+    color: var(--accent-blue);
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    border-bottom: 3px solid var(--accent-blue);
+}
+
+@keyframes kedip {
+    0% { box-shadow: 0 0 0 rgba(255, 51, 51, 0); }
+    50% { box-shadow: 0 0 30px rgba(255, 51, 51, 0.3); }
+    100% { box-shadow: 0 0 0 rgba(255, 51, 51, 0); }
+}
+
+.export-card {
+    background-color: #111724;
+    border: 1px solid #243145;
+    border-radius: 20px;
+    padding: 30px;
+    width: min(720px, calc(100% - 40px));
+    margin: 40px auto 0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    text-align: center;
+}
+
+.export-title {
+    font-size: 22px;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.export-card p {
+    margin: 0 0 20px;
+    color: #a1b0c2;
+    line-height: 1.6;
+}
+
+.export-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+#export_range,
+#export_csv_btn {
+    border-radius: 12px;
+    border: none;
+    padding: 12px 18px;
+    font-size: 15px;
+}
+
+#export_range {
+    background: #0f1724;
+    color: #e2e8f0;
+    min-width: 150px;
+    border: 1px solid #2c3b54;
+}
+
+#export_csv_btn {
+    cursor: pointer;
+    background: linear-gradient(135deg, #00f0ff, #0092ff);
+    color: #03121f;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#export_csv_btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+.export-status {
+    color: #9fb8d6;
+    font-size: 14px;
+}
+
+.footer { margin-top: auto; padding: 30px; color: #555; font-size: 14px; }
